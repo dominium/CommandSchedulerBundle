@@ -15,7 +15,7 @@
         "php": ">=5.5.9",
         "symfony/symfony": "~2.7|~3.0",
         "sensio/framework-extra-bundle": "~2.3|~3.0",
-        "twig/twig": "~1.15",
+        "twig/twig": "dev-master",
         "doctrine/orm": "dev-master",
         "doctrine/doctrine-bundle": "dev-master",
         "mtdowling/cron-expression": "~1.0"
