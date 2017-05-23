@@ -155,32 +155,13 @@ class ScheduledCommand
     }
 
     /**
-     * Get arguments - If toArray is passed to true, then the argument string is transformed into an exploitable array
-     *  to init and InputArgumentArray and run command
+     * Get arguments
      *
-     * @param bool $toArray
-     * @return array|mixed
+     * @return string
      */
-    public function getArguments($toArray = false)
+    public function getArguments()
     {
-        if (false === $toArray) {
-            return $this->arguments;
-        }
-
-        $argsArray = array();
-        if (null !== $this->arguments || '' != $this->arguments) {
-            $flatArgsArray = explode(' ', preg_replace('/\s+/', ' ', $this->arguments));
-            foreach ($flatArgsArray as $argument) {
-                $tmpArray = explode('=', $argument);
-                if (count($tmpArray) == 1) {
-                    $argsArray[$tmpArray[0]] = true;
-                } else {
-                    $argsArray[$tmpArray[0]] = $tmpArray[1];
-                }
-            }
-        }
-
-        return $argsArray;
+        return $this->arguments;
     }
 
     /**

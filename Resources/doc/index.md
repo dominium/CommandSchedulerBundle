@@ -144,6 +144,8 @@ From this screen, you can do following actions :
   - Enable or disable scheduling (by clicking the "Power Off/On" switch)
   - Manually execute a command (It will be launched during the next `scheduler:execute`, regardless of the cron expression)
   - Unlock a task (if the lock is due to an unrecoverable error for example)
+  
+When creating a new scheduling, you can provide your commands arguments and options exactly as you wold do from the console. Remember to use quotes when using arguments and options that includes white spaces.
 
 After that, you have to set (every few minutes, it depends of your needs) the following command in your system :
 ``` bash
@@ -168,7 +170,6 @@ The `scheduler:execute` command will do following actions :
 This system avoid to have simultaneous process for the same command.
 Thus, if an non-catchable error occurs, the command won't be executed again unless the problem is solved and the task is unlocked manually.
 
-For any comments, questions, or bug report, use the  [Github issue tracker](https://github.com/J-Mose/CommandSchedulerBundle/issues).
 
 Monitoring
 =============
@@ -187,3 +188,6 @@ The call returns a JSON object with either HTTP 200 and an empty array (everythi
 
 For "internal" monitoring of jobs there is also a command "scheduler:monitor" which does the same check as the monitor call before except it sends emails to an arbitrary number of receivers (if the server allows sending mails with the "mail" command).
 As some kind of "self-monitoring" job the monitor command can be configured to send emails to all receivers if everything's ok - if there is no mail at all a problem occured.
+
+
+For any comments, questions, or bug report, use the  [Github issue tracker](https://github.com/J-Mose/CommandSchedulerBundle/issues).
